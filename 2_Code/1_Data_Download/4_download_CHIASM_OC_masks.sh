@@ -1,18 +1,18 @@
 #!/bin/bash
 
 #########################################################################################################################################################################################################
-#Script Name	: 1_download_HCP_T1w.sh                                                                                            
-#Description	: This script interacts with brainlife.io CLI in order to download T1w images of the control participants from HCP 3T 1200 Subject Release dataset.
+#Script Name	: 4_download_CHIASM_OC_masks.sh                                                                                            
+#Description	: This script interacts with brainlife.io CLI in order to download masks of the optic chiasm, which were created by running FreeSurfer on the CHIASM dataset.
 #Args           :                                                                                           
 #Author       	: Robert J. Puzniak                                               
 #Email         	: rjpuzniak@gmail.com                                         
 #########################################################################################################################################################################################################
 
-# Select the HCP project
-project_id=5941a225f876b000210c11e5
+# Select the CHIASM project
+project_id=5ddfa986936ca339b1c5f455
 
 # Define the datatype of interest containing mask of optic chiasm
-datatype='neuro/anat/t1w'
+datatype='neuro/freesurfer'
 
 #Cache the list of datasets that we could download
 if [ ! -f all.json ]; then
@@ -21,17 +21,25 @@ fi
 
 for subject in $(jq -r '.[].meta.subject' all.json | sort -u); do
     echo "downloading subject:$subject ---------------"
-    outdir=../../1_Data/1_T1w_Images_and_Labels/1_T1w_Images/HCP/$subject
+    outdir=../../1_Data/1_T1w_Images_and_Labels/2_Optic_Chiasm_Labels_Initial/CHIASM/$subject
     mkdir -p $outdir
-    # Get the ID of desired T1w image
     ids=$(jq -r '.[] | select(.meta.subject == '\"$subject\"') | ._id' all.json)
-    for id in $ids; do
-	# Download it to respective location
-        bl dataset download $id --directory $outdir        
-    done
+    ids_arr=($ids)
+    if [ ! -f $outdir/OC_mask_FS.nii.gz ]; then
+	    # Download it to respective location
+	    bl dataset download $ids_arr --directory $outdir
+	    # Extract optic chiasm mask from FreeSurfer segmentation output (aseg.mgz) file and save it
+	    mrcalc $outdir/output/mri/aseg.mgz 85 -eq $outdir/OC_mask_FS.nii.gz
+	    # Remove downloaded dataset
+	    rm -rf $outdir/output
+    fi
 done
+
 
 rm all.json
 
 : <<'END'
 END
+
+
+
