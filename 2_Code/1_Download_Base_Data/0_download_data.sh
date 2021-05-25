@@ -2,7 +2,7 @@
 
 #########################################################################################################################################################################################################
 #Script Name	: 0_download_data.sh                                                                                            
-#Description	: This script interacts with brainlife.io CLI in order to download subset of data from HCP and CHIASM repositories as required by (Puzniak & Hoffmann, In preparation)
+#Description	: This script interacts with brainlife.io CLI in order to download subset of data from HCP and CHIASM repositories as required by (Puzniak & Hoffmann, in preparation)
 #Args           :                                                                                           
 #Author       	: Robert J. Puzniak                                               
 #Email         	: rjpuzniak@gmail.com                                         
@@ -19,11 +19,8 @@ source 1_download_HCP_T1w.sh
 # (2) T1w MRI images from CHIASM dataset
 source 2_download_CHIASM_T1w.sh
 
-# (3) FreeSurfer-based masks of optic chiasm from HCP dataset
+# (3) X-mask initial (masks of optic chiasm created by FreeSurfer's segmentation) from HCP and CHIASM datasets
 source 3_download_HCP_OC_masks.sh
-
-# (4) FreeSurfer-based masks of optic chiasm from CHIASM dataset
-source 4_download_CHIASM_OC_mask.sh
 
 # Block comment
 : <<'END'
