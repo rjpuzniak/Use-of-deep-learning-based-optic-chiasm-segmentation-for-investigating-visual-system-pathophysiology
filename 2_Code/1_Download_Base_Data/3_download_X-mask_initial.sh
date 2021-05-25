@@ -29,7 +29,7 @@ for dataset in $datasets; do
 
 	for subject in $(jq -r '.[].meta.subject' all.json | sort -u); do
 	    echo "downloading subject:$subject ---------------"
-	    outdir=Data/$dataset/$subject
+	    outdir=../../1_Data/1_T1w_Images_and_Labels/2_Optic_Chiasm_Labels_Initial/$dataset/$subject
 	    mkdir -p $outdir
 	    for id in $(jq -r '.[] | select(.meta.subject == '\"$subject\"') | ._id' all.json); do
 		# Download the file		
