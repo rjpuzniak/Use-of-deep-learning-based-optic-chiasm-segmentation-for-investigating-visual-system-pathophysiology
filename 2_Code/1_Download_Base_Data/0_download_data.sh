@@ -20,7 +20,7 @@ source 1_download_HCP_T1w.sh
 source 2_download_CHIASM_T1w.sh
 
 # (3) X-mask initial (masks of optic chiasm created by FreeSurfer's segmentation) from HCP and CHIASM datasets
-source 3_download_HCP_OC_masks.sh
+source 3_download_X-mask_initial.sh
 
 # Block comment
 : <<'END'
