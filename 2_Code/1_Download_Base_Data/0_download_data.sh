@@ -19,8 +19,11 @@ source 1_download_HCP_T1w.sh
 # (2) T1w MRI images from CHIASM dataset
 source 2_download_CHIASM_T1w.sh
 
-# (3) X-mask initial (masks of optic chiasm created by FreeSurfer's segmentation) from HCP and CHIASM datasets
-source 3_download_X-mask_initial.sh
+# (3) X-mask_manual (masks of optic chiasm created manually by trained operator from T1w images) from HCP and CHIASM datasets
+source 3_download_X-mask_manual.sh
+
+# (4) X-mask_atlas-initial (masks of optic chiasm created by FreeSurfer's segmentation) from HCP and CHIASM datasets
+source 4_download_X-mask_atlas-initial.sh
 
 # Block comment
 : <<'END'
