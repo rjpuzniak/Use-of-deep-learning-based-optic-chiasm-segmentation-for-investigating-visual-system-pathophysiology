@@ -8,9 +8,9 @@ This repository provides a framework for reproduction (and further investigation
 
 The repository consists of 3 basic folders:
 
-- `1_Data` - where all the project-related data will be saved and stored
-- `2_Code` - divided into several subfolders, corresponding to consequtive stages of analysis (download of the base data, data preprocessing, network training, deployment of the trained neural network and evaluation of the results)
-- `3_Figures` - containing all the generated figures, as well as the custom script used in the process of preparing Virtual Reality visualizations included in the publication.
+- `1_Data` - where all the project-related data will be saved and stored.
+- `2_Code` - divided into several subfolders, corresponding to consequtive stages of analysis (download of the base data, data preprocessing, network training, deployment of the trained neural network and evaluation of the results).
+- `3_Figures` - containing all the generated figures.
 
 ### Usage
 
