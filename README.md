@@ -2,7 +2,7 @@
 
 ### Overview
 
-This repository provides a framework for reproduction (and further investigation) of the analysis presented in _"Use of deep learning-based optic chiasm segmentation for the investigation of visual system pathophysiology and neuroplasticity"(in review)_. As such it links other external repositories containing the data linked to the publication (OSF repository containing saved parameters of the neural networks https://osf.io/4cvgq/ and brainlife.io repository containing necessary masks of the optic chiasm https://brainlife.io/project/6043cb8966d5ce5fc26f5f73/dataset) and provides the code (in form of bash, python and jupyter-notebook scripts) required to repeat the presented experiment.
+This repository provides a framework for reproduction (and further investigation) of the analysis presented in _"Use of deep learning-based optic chiasm segmentation for the investigation of visual system pathophysiology and neuroplasticity"(in review)_. As such it links other external repositories containing the data linked to the publication (OSF repository containing saved parameters of the neural networks https://osf.io/4cvgq/ and brainlife.io repository containing necessary masks of the optic chiasm https://brainlife.io/project/6043cb8966d5ce5fc26f5f73/detail) and provides the code (in form of bash, python and jupyter-notebook scripts) required to repeat the presented experiment.
 
 ### Contents
 
