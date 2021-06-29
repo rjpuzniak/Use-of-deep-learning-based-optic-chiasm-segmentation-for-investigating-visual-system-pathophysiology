@@ -10,6 +10,7 @@ Additionally, provided jupyter-notebook file `Explain_X-mask_atlas-corrected.ipy
 In case of:
 (a) downloading from the brainlife.io
 - brainlife CLI
+
 (b) running a custom correction algorithm
 - Python 3 with installed `nibabel`, `nilearn`, `skimage` and `scipy` libraries
 

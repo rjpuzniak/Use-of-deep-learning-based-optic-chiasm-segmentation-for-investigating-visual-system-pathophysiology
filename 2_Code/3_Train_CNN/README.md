@@ -1,4 +1,4 @@
-# Correct optic chiasm masks
+# Train CNN
 
 ## Overview
 

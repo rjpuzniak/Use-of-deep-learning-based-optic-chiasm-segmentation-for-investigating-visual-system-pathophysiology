@@ -27,7 +27,7 @@ for dataset in $datasets; do
 
 	#Cache the list of files (belonging to given dataset) that can be downloaded
 	if [ ! -f all.json ]; then
-	    bl dataset query --limit 2000 --project $project_id --datatype $datatype --tag $dataset --datatype_tag $datatag --json > all.json
+	    bl dataset query --limit 5000 --project $project_id --datatype $datatype --tag $dataset --datatype_tag $datatag --json > all.json
 	fi
 
 	for subject in $(jq -r '.[].meta.subject' all.json | sort -u); do
