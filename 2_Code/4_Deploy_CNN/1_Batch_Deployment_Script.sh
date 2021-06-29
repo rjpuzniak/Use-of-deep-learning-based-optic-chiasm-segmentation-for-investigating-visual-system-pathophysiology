@@ -15,7 +15,7 @@ for connectivity in $connectivities; do
 					sub=$(basename $subject)
 
 					mkdir -p ../../1_Data/5_X-mask_CNN/training_$weight/connectivity_$connectivity/threshold_$threshold/$group/$sub
-					python 0_Deployment_Script.py $folder_t1w/$group/$sub/t1.nii.gz ../../1_Data/5_X-mask_CNN/training_$weight/connectivity_$connectivity/threshold_$threshold/$group/$sub X-mask_CNN -weights ../../1_Data/0_CNN_weights/${weight}.pt -threshold $threshold -connectivity $connectivity -output_format 'nii.gz'
+					python 0_Deployment_Script.py $folder_t1w/$group/$sub/t1.nii.gz ../../1_Data/5_X-mask_CNN/training_$weight/connectivity_$connectivity/threshold_$threshold/$group/$sub X-mask_CNN_complete -weights ../../1_Data/0_CNN_weights/${weight}.pt -threshold $threshold -connectivity $connectivity -output_format 'nii.gz'
 					echo $sub
 
 				done
